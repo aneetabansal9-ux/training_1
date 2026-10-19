@@ -39,39 +39,39 @@ activities = {
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
     },
-    "Soccer Team": {
-        "description": "Develop soccer skills and compete in team matches",
-        "schedule": "Tuesdays and Thursdays, 3:30 PM - 5:00 PM",
-        "max_participants": 22,
-        "participants": []
-    },
-    "Basketball Club": {
-        "description": "Practice basketball skills and play friendly games",
-        "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
+    "Basketball Team": {
+        "description": "Practice shooting, passing, and teamwork in competitive games",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
         "max_participants": 15,
         "participants": []
     },
-    "Drama Club": {
-        "description": "Act, direct, and perform in school productions",
+    "Swimming Club": {
+        "description": "Build endurance and technique while enjoying pool workouts",
         "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "Drama Club": {
+        "description": "Explore acting, stage performance, and dramatic storytelling",
+        "schedule": "Mondays, 3:30 PM - 5:00 PM",
         "max_participants": 20,
         "participants": []
     },
-    "Art Studio": {
-        "description": "Explore drawing, painting, and other visual arts",
+    "Art Workshop": {
+        "description": "Create paintings, sketches, and mixed media projects",
         "schedule": "Thursdays, 3:30 PM - 5:00 PM",
         "max_participants": 16,
         "participants": []
     },
-    "Debate Club": {
-        "description": "Build research, reasoning, and public speaking skills",
-        "schedule": "Tuesdays, 3:30 PM - 4:30 PM",
-        "max_participants": 18,
+    "Math Olympiad": {
+        "description": "Solve challenging problems and prepare for math competitions",
+        "schedule": "Wednesdays, 3:45 PM - 5:00 PM",
+        "max_participants": 14,
         "participants": []
     },
     "Science Club": {
-        "description": "Explore scientific ideas through experiments and projects",
-        "schedule": "Fridays, 3:30 PM - 4:30 PM",
+        "description": "Conduct experiments and explore hands-on scientific discovery",
+        "schedule": "Fridays, 2:30 PM - 4:00 PM",
         "max_participants": 18,
         "participants": []
     }
@@ -100,7 +100,7 @@ def signup_for_activity(activity_name: str, email: str):
 
 # Validate student is not already signed up
     if email in activity["participants"]:
-        raise HTTPException(status_code=400, detail="Student is already signed up for this activity")
+        raise HTTPException(status_code=400, detail="Student already signed up for this activity")
 
     # Add student
     activity["participants"].append(email)
